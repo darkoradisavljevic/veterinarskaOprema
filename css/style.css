@@ -1,0 +1,25 @@
+html, body {
+	font-family: 'Lato', sans-serif !important;
+}
+h1{
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #0a750a;
+}
+nav .container-fluid .navbar-header a{
+	text-transform: uppercase;
+	color: #0a750a;
+}
+
+
+#footer {
+	background-color: #ddd;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 16px;
+}
+ 
