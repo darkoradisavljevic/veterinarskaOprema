@@ -23,7 +23,6 @@
 </nav>
 
 <script>
-	console.log(localStorage.getItem("isLogin"), 'localStorage.getItem("isLogin")')
 	if (JSON.parse(localStorage.getItem("isLogin")) === true) {
 		document.getElementById("menu-item-user").innerHTML = localStorage.getItem("korisnickoIme");
 	} else {
