@@ -1,0 +1,180 @@
+<div class="row mainRow">
+	<div class="col-md-6">
+		<div id="loginForm" class="invisible">
+			<form>
+				<div class="form-group">
+					<label for="korisnickoImeUsera">Korisiničko ime</label>
+					<input type="text" class="form-control" id="korisnickoImeUsera" placeholder="Unesite korisničko ime">
+					<small id="korisnickoImeText" class="form-text text-muted">Korisničko ime je jedinstveno</small>
+				</div>
+				<div class="form-group">
+					<label for="Password">Lozinka</label>
+					<input type="password" class="form-control" id="passwordUsera" placeholder="Lozinka">
+				</div>
+
+				<button type="submit" class="btn btn-primary" id="login"
+					onclick="switchForms(event, 'loginForm', 'registrationForm')">Uloguj
+					se</button>
+				<button type="submit" class="btn btn-primary" id="changeRegistration"
+					onclick="switchForms(event, 'registrationForm', 'loginForm')">Registruj
+					se</button>
+			</form>
+		</div>
+		<div id="registrationForm" class="invisible">
+			<form id="formRegistration">
+				<div class="form-group">
+					<label for="Ime">Ime *</label>
+					<input type="text" class="form-control" id="ime" placeholder="Unesite ime" onkeyup="clearErrorMsg('ime')"
+						required>
+					<small id="err-ime" class="form-text invisible err-msg">Ime je obavezno polje!</small>
+				</div>
+				<div class="form-group">
+					<label for="prezime">Prezime *</label>
+					<input type="text" class="form-control" id="prezime" placeholder="Unesite prezime"
+						onkeyup="clearErrorMsg('prezime')" required>
+					<small id="err-prezime" class="form-text invisible err-msg">Prezime je obavezno polje!</small>
+				</div>
+				<div class="form-group">
+					<label for="korisnickoIme">Korisiničko ime *</label>
+					<input type="text" class="form-control" id="korisnickoIme" placeholder="Unesite korisničko ime"
+						onkeyup="clearErrorMsg('korisnickoIme')" required>
+					<small id="err-korisnickoIme" class="form-text invisible err-msg">Korisničko ime je obavezno polje!</small>
+				</div>
+				<div class="form-group">
+					<label for="imeFirme">Ime firme</label>
+					<input type="text" class="form-control" id="imeFirme" placeholder="Unesite ime firme">
+				</div>
+				<div class="form-group">
+					<label for="email">Email *</label>
+					<input type="email" class="form-control" id="email" placeholder="Unesite email"
+						onkeyup="clearErrorMsg('email')" required>
+					<small id="err-email" class="form-text invisible err-msg">Email je obavezno polje!</small>
+				</div>
+				<div class="form-group">
+					<label for="password">Lozinka *</label>
+					<input type="password" class="form-control" id="password" placeholder="Unesite lozinku"
+						onkeyup="clearErrorMsg('password')" required>
+					<small id="err-password" class="form-text invisible err-msg">Lozinka je obavezno polje!</small>
+				</div>
+				<div class="form-group">
+					<label for="password1">Potvrda lozinke</label>
+					<input type="password" class="form-control" id="password1" placeholder="Ponovite lozinku"
+						onkeyup="clearErrorMsg('password1')" required>
+					<small id="err-password1" class="form-text invisible err-msg">Potvrda lozinke je obavezno polje!</small>
+					<small id="err-passDif" class="form-text invisible err-msg">Lozinke nisu iste!</small>
+				</div>
+				<button type="submit" class="btn btn-primary" id="changeLogin"
+					onclick="switchForms(event, 'loginForm', 'registrationForm')">Uloguj
+					se</button>
+				<button type="submit" class="btn btn-primary" id="registration"
+					onclick="switchForms(event, 'registrationForm', 'loginForm')">Registruj
+					se</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="col-md-6 text-center right-side">
+		<h1>Dobrodošli</h1>
+		<div class="subheader">Na sajt veterinarske opreme</div>
+		<img class="homepageImg" src="../assets/vetOpremaTransparent.png" alt="veterinarska oprema" width="270px">
+	</div>
+</div>
+<script>
+	function elementById(id) {
+		return document.getElementById(id);
+	}
+	elementById('loginForm').className = "visible";
+
+	function switchForms(event, eventToShow, eventToHide) {
+		event.preventDefault();
+		elementById(eventToShow).className = "visible";
+		elementById(eventToHide).className = "invisible";
+	}
+	elementById("registration").addEventListener("click", registration);
+
+	function registration(event) {
+		event.preventDefault();
+
+		const ime = elementById("ime").value;
+		const prezime = elementById("prezime").value;
+		const korisnickoIme = elementById("korisnickoIme").value;
+		const imeFirme = elementById("imeFirme").value;
+		const email = elementById("email").value;
+		const password = elementById("password").value;
+		const password1 = elementById("password1").value;
+		const isLogin = false;
+
+		save(ime, prezime, korisnickoIme, imeFirme, email, password);
+	}
+
+
+
+	function validation(event, form) {
+		const password = elementById("password").value;
+		const password1 = elementById("password1").value;
+		let getForm = elementById(form).getElementsByTagName('input');
+		let errors = [];
+		for (var i = 0; i < getForm.length; i++) {
+			if (getForm[i].value === "") {
+				if (elementById("err-" + getForm[i].id)) {
+					errors.push(elementById("err-" + getForm[i].id));
+					elementById("err-" + getForm[i].id).className = "visible";
+				}
+			}
+		}
+
+		if (errors.length > 0 || password !== password1) {
+			elementById("err-passDif").className = "visible";
+			return false;
+		} else {
+			elementById("err-passDif").className = "invisible";
+			elementById("err-" + getForm[i].id).className = "invisible";
+			return true;
+		}
+
+	}
+	function clearErrorMsg(id) {
+		elementById('err-' + id).className = 'invisible';
+		elementById('err-passDif').className = 'invisible';
+
+	}
+
+	function save(ime, prezime, korisnickoIme, imeFirme, email, password) {
+		if (!validation(event, "formRegistration")) {
+			return;
+		}
+		if (localStorage.getItem("korisnickoIme")) {
+			alert(`Korisnik sa korisničkim imenom ${korisnickoIme} postoji!`);
+		} else {
+			localStorage.setItem("ime", ime);
+			localStorage.setItem("prezime", prezime);
+			localStorage.setItem("korisnickoIme", korisnickoIme);
+			localStorage.setItem("imeFirme", imeFirme);
+			localStorage.setItem("email", email);
+			localStorage.setItem("password", password);
+			localStorage.setItem("isLogin", true);
+
+			document.location.replace('pocetna.html');
+
+
+		}
+	}
+	// document.getElementById("login").addEventListener("click", login);
+
+	// function login(event) {
+	// 	event.preventDefault();
+
+	// 	const korisnickoImeUsera = document.getElementById("korisnickoImeUsera").value;
+	// 	const passwordUsera = document.getElementById("passwordUsera").value;
+
+	// 	const registeredUsername = localStorage.getItem("korisnickoIme");
+	// 	const registeredPassword = localStorage.getItem("password");
+
+	// 	if (korisnickoImeUsera === registeredUsername && passwordUsera === registeredPassword) {
+	// 		alert(`uspesno ste ulogovani`);
+	// 	} else {
+	// 		alert(`Pogresan username/password`);
+	// 	}
+	// }
+
+</script>
