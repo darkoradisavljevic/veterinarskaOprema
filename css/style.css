@@ -1,25 +1,58 @@
 html, body {
+	height: 100%;
 	font-family: 'Lato', sans-serif !important;
 }
 h1{
 	font-size: 20px;
 	text-transform: uppercase;
-	color: #0a750a;
 }
 nav .container-fluid .navbar-header a{
 	text-transform: uppercase;
 	color: #0a750a;
 }
+.right-side {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+.subheader{
+	font-size: 24px;
+	color: #0a750a;
+}
+.homepageImg{
+	margin-top: 3em;
+}
 
-
+.container {
+	height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainRow{
+	width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 #footer {
 	background-color: #ddd;
 	text-align: center;
 	width: 100%;
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 16px;
 }
- 
+.invisible {
+display: none;
+}
+.visible {
+	display: block;
+}
+small {
+	color: red;
+}
