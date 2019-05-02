@@ -3,6 +3,11 @@
 		<div id="loginForm" class="invisible">
 			<form>
 				<div class="form-group">
+					<div id="alert-danger-id" class="invisible">
+						<div class="alert alert-danger ">
+							<strong>Pogresno korisničko ime ili lozinka!</strong>
+						</div>
+					</div>
 					<label for="korisnickoImeUsera">Korisiničko ime</label>
 					<input type="text" class="form-control" id="korisnickoImeUsera" placeholder="Unesite korisničko ime">
 					<small id="korisnickoImeText" class="form-text text-muted">Korisničko ime je jedinstveno</small>
@@ -107,8 +112,6 @@
 		save(ime, prezime, korisnickoIme, imeFirme, email, password);
 	}
 
-
-
 	function validation(event, form) {
 		const password = elementById("password").value;
 		const password1 = elementById("password1").value;
@@ -123,27 +126,28 @@
 			}
 		}
 
-		if (errors.length > 0 || password !== password1) {
+		if (errors.length > 0) {
+			return false;
+		}
+		if (password !== password1) {
 			elementById("err-passDif").className = "visible";
 			return false;
 		} else {
 			elementById("err-passDif").className = "invisible";
-			elementById("err-" + getForm[i].id).className = "invisible";
 			return true;
 		}
-
 	}
+
 	function clearErrorMsg(id) {
 		elementById('err-' + id).className = 'invisible';
 		elementById('err-passDif').className = 'invisible';
-
 	}
 
 	function save(ime, prezime, korisnickoIme, imeFirme, email, password) {
 		if (!validation(event, "formRegistration")) {
-			return;
+			return false;
 		}
-		if (localStorage.getItem("korisnickoIme")) {
+		if (localStorage.getItem("korisnickoIme") === korisnickoIme) {
 			alert(`Korisnik sa korisničkim imenom ${korisnickoIme} postoji!`);
 		} else {
 			localStorage.setItem("ime", ime);
@@ -156,25 +160,27 @@
 
 			document.location.replace('pocetna.html');
 
-
 		}
 	}
-	// document.getElementById("login").addEventListener("click", login);
+	document.getElementById("login").addEventListener("click", login);
 
-	// function login(event) {
-	// 	event.preventDefault();
+	function login(event) {
+		event.preventDefault();
 
-	// 	const korisnickoImeUsera = document.getElementById("korisnickoImeUsera").value;
-	// 	const passwordUsera = document.getElementById("passwordUsera").value;
+		const korisnickoImeUsera = document.getElementById("korisnickoImeUsera").value;
+		const passwordUsera = document.getElementById("passwordUsera").value;
 
-	// 	const registeredUsername = localStorage.getItem("korisnickoIme");
-	// 	const registeredPassword = localStorage.getItem("password");
+		const registeredUsername = localStorage.getItem("korisnickoIme");
+		const registeredPassword = localStorage.getItem("password");
 
-	// 	if (korisnickoImeUsera === registeredUsername && passwordUsera === registeredPassword) {
-	// 		alert(`uspesno ste ulogovani`);
-	// 	} else {
-	// 		alert(`Pogresan username/password`);
-	// 	}
-	// }
+		if (korisnickoImeUsera === registeredUsername && passwordUsera === registeredPassword) {
+			localStorage.setItem("isLogin", true);
+			document.location.replace('pocetna.html');
+
+		} else {
+			elementById("alert-danger-id").className = "visible";
+			document.getElementsByClassName("alert-danger").value;
+		}
+	}
 
 </script>
