@@ -107,8 +107,6 @@
 		save(ime, prezime, korisnickoIme, imeFirme, email, password);
 	}
 
-
-
 	function validation(event, form) {
 		const password = elementById("password").value;
 		const password1 = elementById("password1").value;
@@ -123,27 +121,28 @@
 			}
 		}
 
-		if (errors.length > 0 || password !== password1) {
+		if (errors.length > 0) {
+			return false;
+		}
+		if (password !== password1) {
 			elementById("err-passDif").className = "visible";
 			return false;
 		} else {
 			elementById("err-passDif").className = "invisible";
-			elementById("err-" + getForm[i].id).className = "invisible";
 			return true;
 		}
-
 	}
+
 	function clearErrorMsg(id) {
 		elementById('err-' + id).className = 'invisible';
 		elementById('err-passDif').className = 'invisible';
-
 	}
 
 	function save(ime, prezime, korisnickoIme, imeFirme, email, password) {
 		if (!validation(event, "formRegistration")) {
-			return;
+			return false;
 		}
-		if (localStorage.getItem("korisnickoIme")) {
+		if (localStorage.getItem("korisnickoIme") === korisnickoIme) {
 			alert(`Korisnik sa korisničkim imenom ${korisnickoIme} postoji!`);
 		} else {
 			localStorage.setItem("ime", ime);
@@ -155,8 +154,7 @@
 			localStorage.setItem("isLogin", true);
 
 			document.location.replace('pocetna.html');
-
-
+			
 		}
 	}
 	// document.getElementById("login").addEventListener("click", login);
