@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Hidrulični veterinarski sto",
+    "img": "/assets/hidrulicni_veterinarski_sto.jpg",
+    "description": "Neki opis proizvoda"
+  },
+  {
+    "id": 2,
+    "name": "Hirurške igle",
+    "img": "/assets/hirurske_igle.jpg",
+    "description": "Neki opis proizvoda"
+  },
+  {
+    "id": 3,
+    "name": "Prenosivi ultrazvučni aparat",
+    "img": "/assets/prenosivi_ultrazvucni_aparat.jpg",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  },
+  {
+    "id": 4,
+    "name": "Veterinarska infracrvena lampa na stalku",
+    "img": "/assets/veterinarska_infracrvena_lampa_na_stalku.jpg",
+    "description": "Neki opis proizvoda"
+  },
+  {
+    "id": 5,
+    "name": "Špric za precizno doziranje 1.0 ml",
+    "img": "/assets/Špric_za_precizno_doziranje_1.0_ml.jpg",
+    "description": "Neki opis proizvoda"
+  },
+  {
+    "id": 6,
+    "name": "Špric sa automatskim punjenjem",
+    "img": "/assets/špric_sa_automatskim_punjenjem.jpg",
+    "description": "Neki opis proizvoda"
+  },
+  {
+    "id": 7,
+    "name": "Špric za vakcinisanje većeg broja životinja",
+    "img": "/assets/špric_za_vakcinisanje_većeg_broja_životinja.jpg",
+    "description": "Neki opis proizvoda"
+  },
+  {
+    "id": 8,
+    "name": "Nitrilne rukavice",
+    "img": "/assets/Nitrilne_rukavice.jpg",
+    "description": "Neki opis proizvoda"
+  }
+]

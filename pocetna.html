@@ -17,12 +17,18 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
     <script>
       $(() => {
         $("#footer").load("/html/footer.html");
         $("#header").load("/html/header.html");
         $(".container").load(`/html${window.location.pathname}`);
+      });
+      $.getJSON("/jsons/partneri.json", data => {
+        localStorage.setItem("partners", JSON.stringify(data));
+      });
+
+      $.getJSON("/jsons/proizvodi.json", data => {
+        localStorage.setItem("proizvodi", JSON.stringify(data));
       });
     </script>
     <link
