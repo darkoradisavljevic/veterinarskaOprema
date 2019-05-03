@@ -1,0 +1,38 @@
+[
+  {
+    "id": "oster",
+    "name": "Oster",
+    "url": "https://www.oster.com/",
+    "img": "/assets/oster.png"
+  },
+  {
+    "id": "kerbl",
+    "name": "Kerbl",
+    "url": "https://www.kerbl.com/",
+    "img": "/assets/kerbl.png"
+  },
+  {
+    "id": "demotec",
+    "name": "Demotec",
+    "url": "https://www.demotec.com/en/",
+    "img": "/assets/demotec.png"
+  },
+  {
+    "id": "mindray",
+    "name": "Mindray",
+    "url": "https://www.mindray.com/cn/index.html",
+    "img": "/assets/mindry.png"
+  },
+  {
+    "id": "askulap",
+    "name": "Askulap",
+    "url": "https://www.aesculapusa.com/",
+    "img": "/assets/askulap.png"
+  },
+  {
+    "id": "askulap",
+    "name": "Askulap",
+    "url": "http://www.realtrace.com/",
+    "img": "/assets/realtrace.jpg"
+  }
+]

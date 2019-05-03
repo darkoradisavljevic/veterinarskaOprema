@@ -27,12 +27,16 @@
         $("#header").load("/html/header.html");
         $(".container").load(`/html${window.location.pathname}`);
       });
+      $.getJSON("/jsons/proizvodi.json", data => {
+        localStorage.setItem("proizvodi", JSON.stringify(data));
+      });
     </script>
   </head>
 
   <body>
     <div id="header"></div>
-    <div class="container center fill"></div>
+    <div class="page-title">Proizvodi</div>
+    <div class="container fill"></div>
     <div id="footer"></div>
   </body>
 </html>

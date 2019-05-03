@@ -27,12 +27,24 @@
         $("#header").load("/html/header.html");
         $(".container").load(`/html${window.location.pathname}`);
       });
+      $.getJSON("/jsons/proizvodi.json", data => {
+        localStorage.setItem("proizvodi", JSON.stringify(data));
+      });
+      let query = window.location.search.substring(1);
+      let id = query.split("=");
+      let prod = JSON.parse(localStorage.getItem("proizvodi"));
     </script>
   </head>
 
   <body>
     <div id="header"></div>
-    <div class="container center fill"></div>
+    <div class="page-title" id="product-name"></div>
+    <div class="container fill"></div>
     <div id="footer"></div>
+    <script>
+      document.getElementById("product-name").innerHTML = prod.find(
+        p => p.id === parseInt(id[1])
+      ).name;
+    </script>
   </body>
 </html>

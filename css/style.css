@@ -21,8 +21,8 @@ a:hover {
 .info-container {
   margin-top: 37px;
 }
-i{
-    padding-right: 10px;
+i {
+  padding-right: 10px;
 }
 .row {
   width: 100%;
@@ -177,6 +177,15 @@ small {
   color: #fff !important;
 }
 
+.product-card {
+  margin: 20px 0px;
+}
+.description {
+  margin-bottom: 30px;
+}
+#add-to-list {
+  margin: 20px 0px;
+}
 .card-body .btn-primary {
   display: flex;
   align-items: center;
@@ -194,7 +203,7 @@ iframe {
 }
 
 .card-body h4 {
-  min-height: 50px;
+  min-height: 60px;
   font-size: 13px;
   text-align: center;
   text-transform: uppercase;
@@ -206,6 +215,11 @@ iframe {
   object-fit: contain;
 }
 
+.product-img img {
+  height: 500px;
+  width: 550px;
+  object-fit: contain;
+}
 .about-us {
   text-align: center;
   margin-top: 130px;
@@ -223,7 +237,9 @@ iframe {
   justify-content: center;
   display: flex;
 }
-
+.filters h3 {
+  text-transform: uppercase;
+}
 @media (min-width: 320px) {
   .mainRow {
     flex: 1;
@@ -235,5 +251,8 @@ iframe {
   }
   .container {
     height: auto;
+  }
+  .product-img img {
+    width: 100%;
   }
 }
