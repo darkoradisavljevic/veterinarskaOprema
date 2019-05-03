@@ -1,36 +1,61 @@
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">
-				Veterinarska oprema
-			</a>
-		</div>
-		<ul class="nav navbar-nav navbar-right">
-			<li class="active"><a href="#">Početna</a></li>
-			<li><a href="#">O nama</a></li>
-			<li><a href="#">Kontakt</a></li>
-			<li><a href="#">Proizvodi</a></li>
-			<li>
-				<a class="nav-link dropdown-toggle" href="#" id="menu-item-user" role="button" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false">
+<nav class="navbar fixed-top navbar-inverse navbar-static-top" role="navigation">
+		<div class="navbar-header navbar-left">
+				<a class="navbar-brand" href="#">
+					Veterinarska oprema
 				</a>
-				<div class="dropdown-menu" aria-labelledby="menu-item-user">
-					<a href="#" onclick="logout()">Odjavi se</a>
+			</div>
+		<div>
+				<div class="navbar-header ">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#manu-collapsed">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 				</div>
-			</li>
-		</ul>
-	</div>
+
+	 <!-- Collect the nav links, forms, and other content for toggling -->
+	 <div class="collapse navbar-collapse" id="manu-collapsed">
+			 <ul class="nav navbar-nav navbar-right">
+					<li><a id="pocetna" href="#">Početna</a></li>
+					<li><a href="#">O nama</a></li>
+					<li><a href="/kontakt.html">Kontakt</a></li>
+					<li><a href="#">Proizvodi</a></li>
+					<li>
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="menu-item-user"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+						</a>
+						<div id="menu-dropdown" class="dropdown-menu" aria-labelledby="menu-item-user">
+							<a href="#" onclick="logout()">Odjavi se</a>
+						</div>
+					</li>
+			 </ul>
+		 </div>
+	 </nav>
 </nav>
 
 <script>
-	if (JSON.parse(localStorage.getItem("isLogin")) === true) {
-		document.getElementById("menu-item-user").innerHTML = localStorage.getItem("korisnickoIme");
-	} else {
-		document.getElementById("menu-item-user").innerHTML = "";
-	}
-	function logout() {
-		localStorage.setItem("isLogin", false);
-		document.location.replace('index.html');
-	}
+  if (JSON.parse(localStorage.getItem("isLogin")) === true) {
+		const pocetna = document.getElementById("pocetna");
+		pocetna.setAttribute("href", "pocetna.html");
+    document.getElementById("menu-item-user").innerHTML = localStorage.getItem(
+      "korisnickoIme"
+    );
+  } else {
+		const pocetna = document.getElementById("pocetna");
+		pocetna.setAttribute("href", "index.html");
+    document.getElementById("menu-item-user").innerHTML = "";
+  }
 
+  function logout() {
+    localStorage.setItem("isLogin", false);
+    document.location.replace("index.html");
+  }
 </script>
