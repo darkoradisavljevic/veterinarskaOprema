@@ -25,12 +25,12 @@ function registration(event) {
   save(ime, prezime, korisnickoIme, imeFirme, email, password);
 }
 
-function validation(event, form) {
+function validation(form) {
   const password = elementById("password").value;
   const password1 = elementById("password1").value;
   let getForm = elementById(form).getElementsByTagName("input");
   let errors = [];
-  for (var i = 0; i < getForm.length; i++) {
+  for (let i = 0; i < getForm.length; i++) {
     if (getForm[i].value === "") {
       if (elementById("err-" + getForm[i].id)) {
         errors.push(elementById("err-" + getForm[i].id));
@@ -43,6 +43,7 @@ function validation(event, form) {
   if (errors.length > 0) {
     return false;
   }
+
   if (password !== password1) {
     elementById("err-passDif").className = "visible";
     return false;
@@ -51,11 +52,20 @@ function validation(event, form) {
     return true;
   }
 }
+// function validatePassword(password) {
+//   if (password.length < 7) {
+//     elementById("validate-password").innerHTML =
+//       "Lozinka mora da ima minimum 8 karaktera!";
+//     elementById("validate-password").className = "visible";
+//     return false;
+//   }
+// }
+
 function validateEmail(email) {
   let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!re.test(String(email).toLowerCase())) {
-    elementById("err-email").innerHTML = "Email nije validan!";
-    elementById("err-email").className = "visible";
+    elementById("validate-email").innerHTML = "Email nije validan!";
+    elementById("validate-email").className = "visible";
     return false;
   }
 }
@@ -63,34 +73,32 @@ function validateEmail(email) {
 function clearErrorMsg(id) {
   elementById("err-" + id).className = "invisible";
   elementById("err-passDif").className = "invisible";
+  // elementById("validate-" + id).className = "invisible";
 }
 
 function save(ime, prezime, korisnickoIme, imeFirme, email, password) {
-  if (!validation(event, "formRegistration")) {
+  if (!validation("formRegistration")) {
     return false;
   }
+
   if (localStorage.getItem("korisnickoIme") === korisnickoIme) {
     alert(`Korisnik sa korisničkim imenom ${korisnickoIme} postoji!`);
   } else {
-    // let userData = [
-    // 	{
-    // 		"ime": ime,
-    // 		"prezime": prezime,
-    // 		"korisnickoIme": korisnickoIme,
-    // 		"imeFirme": imeFirme,
-    // 		"email": email,
-    // 		"password": password,
-    // 		"isLogin": true
-    // 	}
-    // ]
-    // localStorage.setItem("users", JSON.stringify(userData));
-    localStorage.setItem("ime", ime);
-    localStorage.setItem("prezime", prezime);
-    localStorage.setItem("korisnickoIme", korisnickoIme);
-    localStorage.setItem("imeFirme", imeFirme);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let userData = [
+      {
+        ime: ime,
+        prezime: prezime,
+        korisnickoIme: korisnickoIme,
+        imeFirme: imeFirme,
+        email: email,
+        password: password
+      }
+    ];
+    users.push(userData);
+    localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("isLogin", true);
+    localStorage.setItem("korisnickoIme", korisnickoIme);
 
     document.location.replace("pocetna.html");
   }
@@ -102,10 +110,17 @@ function login(event) {
 
   const korisnickoImeUsera = document.getElementById("korisnickoImeUsera")
     .value;
+  localStorage.setItem("korisnickoIme", korisnickoImeUsera);
+
   const passwordUsera = document.getElementById("passwordUsera").value;
 
-  const registeredUsername = localStorage.getItem("korisnickoIme");
-  const registeredPassword = localStorage.getItem("password");
+  const users = JSON.parse(localStorage.getItem("users"));
+  const registeredUsername = users.find(
+    user => user[0].korisnickoIme === korisnickoImeUsera
+  )[0].korisnickoIme;
+  const registeredPassword = users.find(
+    user => user[0].korisnickoIme === korisnickoImeUsera
+  )[0].password;
 
   if (
     korisnickoImeUsera === registeredUsername &&

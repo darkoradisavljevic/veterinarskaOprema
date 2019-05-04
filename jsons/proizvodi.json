@@ -3,48 +3,48 @@
     "id": 1,
     "name": "Hidrulični veterinarski sto",
     "img": "/assets/hidrulicni_veterinarski_sto.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "X baza stola je idealna za veterinarske hirurge, zato što omogućava dobar radni položaj kada veterinar sedi, a hirurška stolica može biti postavljena ispod stola. Hidraulični mehanizam Izrađen od nerđajućeg čelika. Četiri pojedinačno podesive gumene nožice. Sto sa zaobljenim ivicama, zapečaćen silikonom,sa ivicama protiv curenja i odvodna rupa. Prilagodljiva visina: 72 do 112 cm. Mehanizam za jednosmerni nagib: 80°. Jednostavan za čišćenje i dezinfekciju. 3 Godine garancija. Hidraulični mehanizam. Širina: 50 cm, Dužina: 130 cm"
   },
   {
     "id": 2,
     "name": "Hirurške igle",
     "img": "/assets/hirurske_igle.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "• sa malim ušicama, povijene • 12 igala u pakovanju"
   },
   {
     "id": 3,
     "name": "Prenosivi ultrazvučni aparat",
     "img": "/assets/prenosivi_ultrazvucni_aparat.jpg",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "description": "Prenosivi kolor dopler dijagnostički ultrazvučni sistem Z5Vet. Vaša jedinstvena potreba za visokim kvalitetom slike, svestranost, mobilnost i pristupačnost sada je dostupna i u novom prenosivom kolor dopler sistemu Z5Vet. Sa jedinstvenom kombinacijom visoke performanse i niske cene, Z5Vet je rezultat kontinuiranih napora stručnjaka Mindray-a približavanju standarda veterinarske medicine humanim. Bilo da je pregled unutar klinike ili na otvorenom za hitne slučajeve, Z5Vet može da odgovori na sve zahteve kliničara."
   },
   {
     "id": 4,
     "name": "Veterinarska infracrvena lampa na stalku",
     "img": "/assets/veterinarska_infracrvena_lampa_na_stalku.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "Veterinarska LED lampa na stalku, snaga 17 W (90 W halogene sijalica), 5500 °K , 1440 lm, vek trajanja led dioda: 50 000 sati, IRC 95, vrlo moćna lampa perfektno dizajnirana za operativne zahvate. Karakteristike svetla: hladno svetlo, ekološki prihvatljivo i energetski učinak odličan. Jačina svetlosti: udaljenost 30 cm : 60000 luxa, udaljenost 50 cm : 45000 luxa, udaljenost 100 cm: 15000 luxa. Ergonomski dizajn omogućava precizno pozicioniranje i usmeravanje svetlosnog snopa, Podesiva visina stalka lampe, vrlo stabilna zvezdasta baza. Dužina kabla: 3 m, prekidač na zadnjoj strani glave lampe. Boja: bela, Ukupna težina: 9,2 kg."
   },
   {
     "id": 5,
     "name": "Špric za precizno doziranje 1.0 ml",
     "img": "/assets/Špric_za_precizno_doziranje_1.0_ml.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "• Plastični špric za precizno doziranje sa postojanim plastičnim cilindrom • Ergonomski dizajn i veoma jednostavna upotreba čak i kada se radi o izuzetno malim zapreminama • Doziranje u opsegu 0.1 – 1.0 ml, precizno podešavanje bez stupnjeva • Velika preciznost doziranja čak i pri najmanjim količinama, tolerancija < 1% • Klip od nerđajućeg čelika sa izmenjenom dužinom klipa, čime je je postignuta veća preciznost ubrizgavanja • postojana metalna igla • izuzetno postojana plastična korpa • izdvaja se i po ceni i po učinku"
   },
   {
     "id": 6,
     "name": "Špric sa automatskim punjenjem",
     "img": "/assets/špric_sa_automatskim_punjenjem.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "• špric sa automatskim punjenjem • univerzalan, sa bočicom ili sa crevom • postojani metalni klip visoke preciznosti • sa Pin-Lock sistemom (postavljanje creva nije ograničeno) • inovativni i ergonomski oblik omogućava performanse bez velikog napora • visoka preciznost doziranja, podešavanje u više stupnjeva • isporučuje se sa crevom, 18 cm potisna cev i bočica"
   },
   {
     "id": 7,
     "name": "Špric za vakcinisanje većeg broja životinja",
     "img": "/assets/špric_za_vakcinisanje_većeg_broja_životinja.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "• špric za vakcinisanje većeg broja životinja • inovativni i ergonomski dizajn • jednostavno rukovanje usled aluminijumske ručke izlivene pod pritiskom • veoma postojani plastični cilindar sa metalnom iglom koja je otporna na sve poznate medikamente • UV-rezistentan • izuzetno precizno doziranje, tolerancija < 1% • jednostavno doziranje pomoću 0,5 ml (25 ml) ili 1 ml (50 ml) kotura za doziranje • jednostavno se rasklapa • biokompatibilan • može se autoklavirati (134°C/273°F)"
   },
   {
     "id": 8,
     "name": "Nitrilne rukavice",
     "img": "/assets/Nitrilne_rukavice.jpg",
-    "description": "Neki opis proizvoda"
+    "description": "• 30 cm dužine za sigurnu zaštitu • posebno namenjene za mužu • nisu sterilne • isključivo za jednokratnu upotrebu • 1.5 AQL (standardni kvalitet) • mogu se koristiti sa obe strane • ne sadrže lateks • 8 mil debljine za visok stepen rezistentnosti • EN374/1 testirano (zaštita od hemikalija i mikroorganizama) • 50 komada po kutiji"
   }
 ]

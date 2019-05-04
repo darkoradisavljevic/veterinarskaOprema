@@ -29,6 +29,7 @@ i {
   margin-left: 15px !important;
   margin-right: 15px !important;
 }
+
 nav .container-fluid .navbar-header a {
   text-transform: uppercase;
   color: #0a750a;
@@ -79,6 +80,7 @@ nav .container-fluid .navbar-header a {
   justify-content: center;
 }
 .container {
+  margin-top: 50px;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -125,7 +127,7 @@ small {
 .page-title {
   background: #0a750a;
   padding: 40px;
-  margin-top: -20px;
+  margin-top: 50px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -240,6 +242,10 @@ iframe {
 .filters h3 {
   text-transform: uppercase;
 }
+#no-products {
+  text-align: center;
+  padding-top: 100px;
+}
 @media (min-width: 320px) {
   .mainRow {
     flex: 1;
@@ -254,5 +260,8 @@ iframe {
   }
   .product-img img {
     width: 100%;
+  }
+  .index-right-side{
+    margin-top: 50px;
   }
 }
