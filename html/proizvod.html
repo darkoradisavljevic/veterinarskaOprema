@@ -6,9 +6,73 @@
   <div class="col-md-5 col-sm-12 col-xs-12 description">
     <h3>Opis proizvoda</h3>
     <div class="col-md-12" id="product-description"></div>
-    <button class="btn btn-primary" id="add-to-list">
-      Dodaj u listu
+    <button
+      class="btn btn-primary"
+      id="add-to-list"
+      data-toggle="modal"
+      data-target="#askForModal"
+    >
+      Pošaljite upit za proizvod
     </button>
+    <!-- Modal -->
+    <div id="askForModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Upit za proizvod - <span id="ascFor"></span></h4>
+          </div>
+          <div class="modal-body" id="logged">
+            <form>
+              <div class="form-group">
+                <div class="form-group"></div>
+                <label for="user-name">Vaše ime</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="user-name"
+                  placeholder="Unesite vaše ime"
+                />
+              </div>
+              <div class="form-group">
+                <div class="form-group"></div>
+                <label for="user-email">Email adresa</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="user-email"
+                  placeholder="Unesite vašu mail adresu"
+                />
+              </div>
+              <div class="form-group">
+                <label for="question">Pitanje</label>
+                <textarea
+                  name="question"
+                  class="form-control"
+                  id="question"
+                  cols="10"
+                  rows="10"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-body" id="non-logged">
+            <h3>Morate biti ulogovani da biste mogli da pošaljete upit!</h3>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Zatvori
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Pošalji
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <script src="js/proizvod.js"></script>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var owl = $(".owl-carousel");
+  const owl = $(".owl-carousel");
   owl.owlCarousel({
     responsiveClass: true,
     responsive: {
@@ -43,7 +43,7 @@ partners.map(partner => {
   document.getElementById("all-partners").appendChild(partnersDiv);
 });
 
-let cardProducts = JSON.parse(localStorage.getItem("proizvodi"));
+let cardProducts = JSON.parse(localStorage.getItem("products"));
 cardProducts.slice(0, 7).map(proizvod => {
   let cardDiv = document.createElement("div");
   cardDiv.setAttribute("class", "owl-cont");

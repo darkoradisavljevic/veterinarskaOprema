@@ -15,6 +15,12 @@ a:hover {
   color: #0a750a !important;
   text-decoration: none !important;
 }
+.back a {
+  font-size: 20px;
+  padding: 20px;
+  color: #0a750a !important;
+}
+
 .contact {
   color: #0a750a !important;
 }
@@ -50,15 +56,33 @@ nav .container-fluid .navbar-header a {
   color: white;
 }
 
+.headerImg,
 .navbar-left {
   float: left;
 }
-
+#menu-dropdown ul {
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#menu-dropdown ul li {
+  width: 100%;
+  padding: 5px 0;
+}
 #menu-dropdown {
   background: #101010;
   padding: 10px;
 }
-
+#logged,
+#non-logged {
+  padding: 0 30px;
+}
+#loginForm,
+#registrationForm,
+#all-products {
+  margin-bottom: 50px;
+}
 .right-side {
   display: flex;
   align-items: center;
@@ -76,6 +100,7 @@ nav .container-fluid .navbar-header a {
   margin-top: 3em;
 }
 .center {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -122,6 +147,19 @@ nav .container-fluid .navbar-header a {
 
 small {
   color: red;
+}
+
+#topBtn i {
+  padding-right: 0px;
+}
+#topBtn {
+  display: block;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  background: #0a750a;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .page-title {
@@ -261,7 +299,7 @@ iframe {
   .product-img img {
     width: 100%;
   }
-  .index-right-side{
+  .index-right-side {
     margin-top: 50px;
   }
 }

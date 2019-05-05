@@ -1,4 +1,4 @@
-let proizvodi = JSON.parse(localStorage.getItem("proizvodi"));
+let proizvodi = JSON.parse(localStorage.getItem("products"));
 proizvodi.map(proizvod => {
   let proizvodDiv = document.createElement("div");
   proizvodDiv.setAttribute("class", "card product-card col-md-3");
@@ -15,7 +15,7 @@ proizvodi.map(proizvod => {
       `;
   document.getElementById("all-products").appendChild(proizvodDiv);
 });
-function pretragaProizvoda() {
+function searchProducts() {
   let input, allProducts, div, h4, i, productValue, noProducts;
   input = document.getElementById("search-product").value.toUpperCase();
   allProducts = document.getElementById("all-products");
