@@ -112,23 +112,23 @@ document.getElementById("login").addEventListener("click", login);
 function login(event) {
   event.preventDefault();
 
-  const userUsername = document.getElementById("userUsername")
-    .value;
+  const userUsername = document.getElementById("userUsername").value;
   localStorage.setItem("username", userUsername);
-
   const passwordUsera = document.getElementById("passwordUsera").value;
+
+  const us = JSON.parse(localStorage.getItem("users")).find(
+    user => user[0].username === userUsername
+  );
 
   const users = JSON.parse(localStorage.getItem("users"));
   const registeredUsername = users.find(
     user => user[0].username === userUsername
-  )[0].username;
-  const registeredPassword = users.find(
-    user => user[0].username === userUsername
-  )[0].password;
+  );
 
   if (
-    userUsername === registeredUsername &&
-    passwordUsera === registeredPassword
+    registeredUsername &&
+    (userUsername === registeredUsername[0].username &&
+      passwordUsera === registeredUsername[0].password)
   ) {
     localStorage.setItem("isLogin", true);
     document.location.replace("pocetna.html");
