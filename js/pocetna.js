@@ -43,7 +43,8 @@ partners.map(partner => {
   elementById("all-partners").appendChild(partnersDiv);
 });
 
-proizvodi.slice(0, 7).map(proizvod => {
+let randomProizvodi = proizvodi.sort(() => Math.random() - 0.5);
+randomProizvodi.map(proizvod => {
   let cardDiv = document.createElement("div");
   cardDiv.setAttribute("class", "owl-cont");
   cardDiv.innerHTML = `
@@ -56,7 +57,9 @@ proizvodi.slice(0, 7).map(proizvod => {
       />
       <div class="card-body">
         <h4 class="card-title">${proizvod.name}</h4>
-        <a href="proizvod.html?id=${proizvod.id}" class="btn btn-primary">Detaljnije</a>
+        <a href="proizvod.html?id=${
+          proizvod.id
+        }" class="btn btn-primary">Detaljnije</a>
       </div>
     </div>
   `;
