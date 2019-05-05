@@ -1,4 +1,9 @@
 <div class="row">
+  <div class="invisible" id="message-sent">
+    <div class="alert alert-success">
+      <p>Vaša poruka je upešno poslata!</p>
+    </div>
+  </div>
   <div class="col-md-6 col-sm-12 col-xs-12">
     <div class="col-md-12" id="product-image"></div>
   </div>
@@ -23,7 +28,9 @@
             <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
-            <h4 class="modal-title">Upit za proizvod - <span id="ascFor"></span></h4>
+            <h4 class="modal-title">
+              Upit za proizvod - <span id="ascFor"></span>
+            </h4>
           </div>
           <div class="modal-body" id="logged">
             <form>
@@ -32,6 +39,7 @@
                 <label for="user-name">Vaše ime</label>
                 <input
                   type="text"
+                  name="user-name"
                   class="form-control"
                   id="user-name"
                   placeholder="Unesite vaše ime"
@@ -42,6 +50,7 @@
                 <label for="user-email">Email adresa</label>
                 <input
                   type="email"
+                  name="user-email"
                   class="form-control"
                   id="user-email"
                   placeholder="Unesite vašu mail adresu"
@@ -66,7 +75,12 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">
               Zatvori
             </button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <button
+              onclick="document.getElementById('message-sent').className = 'visible'"
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+            >
               Pošalji
             </button>
           </div>
@@ -75,4 +89,5 @@
     </div>
   </div>
 </div>
+<script src="js/main.js"></script>
 <script src="js/proizvod.js"></script>

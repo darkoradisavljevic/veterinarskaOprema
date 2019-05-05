@@ -1,4 +1,3 @@
-let proizvodi = JSON.parse(localStorage.getItem("products"));
 proizvodi.map(proizvod => {
   let proizvodDiv = document.createElement("div");
   proizvodDiv.setAttribute("class", "card product-card col-md-3");
@@ -13,14 +12,14 @@ proizvodi.map(proizvod => {
         }" class="btn btn-primary">Detaljnije</a>
       </div>
       `;
-  document.getElementById("all-products").appendChild(proizvodDiv);
+  elementById("all-products").appendChild(proizvodDiv);
 });
 function searchProducts() {
-  let input, allProducts, div, h4, i, productValue, noProducts;
-  input = document.getElementById("search-product").value.toUpperCase();
-  allProducts = document.getElementById("all-products");
+  let input, allProducts, div, h4, i, productValue;
+  input = elementById("search-product").value.toUpperCase();
+  allProducts = elementById("all-products");
   div = allProducts.getElementsByClassName("product-card");
-  noProducts = document.getElementById("no-products");
+  noProducts = elementById("no-products");
   for (i = 0; i < div.length; i++) {
     h4 = div[i].getElementsByTagName("h4")[0];
     productValue = h4.textContent || h4.innerText;

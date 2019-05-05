@@ -1,12 +1,9 @@
-function elementById(id) {
-  return document.getElementById(id);
-}
-elementById("loginForm").className = "visible";
+setVisible("loginForm");
 
 function switchForms(event, eventToShow, eventToHide) {
   event.preventDefault();
-  elementById(eventToShow).className = "visible";
-  elementById(eventToHide).className = "invisible";
+  setVisible(eventToShow);
+  setInvisible(eventToHide);
 }
 elementById("registration").addEventListener("click", registration);
 
@@ -35,7 +32,7 @@ function validation(form) {
         errors.push(elementById("err-" + getForm[i].id));
         elementById("err-" + getForm[i].id).innerHTML =
           getForm[i].name + " je obavezno polje!";
-        elementById("err-" + getForm[i].id).className = "visible";
+        setVisible("err-" + getForm[i].id);
       }
     }
   }
@@ -46,22 +43,17 @@ function validation(form) {
   }
 
   //Ako korisničko ime već postoji ne dozvoli registraciju
-  if (
-    JSON.parse(localStorage.getItem("users")) &&
-    JSON.parse(localStorage.getItem("users")).find(
-      user => user[0].username === username
-    )
-  ) {
-    elementById("err-username-exist").className = "visible";
+  if (allUsers && allUsers.find(user => user[0].username === username)) {
+    setVisible("err-username-exist");
     elementById("err-username-exist").innerHTML = "Korisničko ime već postoji!";
     return false;
   }
   //ako su lozinke razlicite ili imaju manje od 8 karaktera uslov nije ispunjen
   if (password !== password1 || password.length < 7) {
-    elementById("err-passDif").className = "visible";
+    setVisible("err-passDif");
     return false;
   } else {
-    elementById("err-passDif").className = "invisible";
+    setInvisible("err-passDif");
     return true;
   }
 }
@@ -70,7 +62,7 @@ function validateEmail(email) {
   let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!re.test(String(email).toLowerCase())) {
     elementById("validate-email").innerHTML = "Email nije validan!";
-    elementById("validate-email").className = "visible";
+    setVisible("validate-email");
     return false;
   } else {
     return true;
@@ -78,17 +70,17 @@ function validateEmail(email) {
 }
 
 function clearErrorMsg(id) {
-  elementById("err-" + id).className = "invisible";
-  elementById("err-passDif").className = "invisible";
-  elementById("validate-email").className = "invisible";
-  elementById("err-username-exist").className = "invisible";
+  setInvisible("err-" + id);
+  setInvisible("err-passDif");
+  setInvisible("validate-email");
+  setInvisible("err-username-exist");
 }
 
 function save(name, surname, username, companyName, email, password) {
   if (!validation("formRegistration")) {
     return false;
   }
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let users = allUsers || [];
   let userData = [
     {
       name: name,
@@ -105,23 +97,17 @@ function save(name, surname, username, companyName, email, password) {
   localStorage.setItem("username", username);
 
   document.location.replace("pocetna.html");
-  // }
 }
-document.getElementById("login").addEventListener("click", login);
+elementById("login").addEventListener("click", login);
 
 function login(event) {
   event.preventDefault();
 
-  const userUsername = document.getElementById("userUsername").value;
+  const userUsername = elementById("userUsername").value;
   localStorage.setItem("username", userUsername);
-  const passwordUsera = document.getElementById("passwordUsera").value;
+  const passwordUsera = elementById("passwordUsera").value;
 
-  const us = JSON.parse(localStorage.getItem("users")).find(
-    user => user[0].username === userUsername
-  );
-
-  const users = JSON.parse(localStorage.getItem("users"));
-  const registeredUsername = users.find(
+  const registeredUsername = allUsers.find(
     user => user[0].username === userUsername
   );
 
@@ -133,7 +119,7 @@ function login(event) {
     localStorage.setItem("isLogin", true);
     document.location.replace("pocetna.html");
   } else {
-    elementById("alert-danger-id").className = "visible";
+    setVisible("alert-danger-id");
     document.getElementsByClassName("alert-danger").value;
   }
 }
