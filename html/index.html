@@ -8,14 +8,14 @@
               <strong>Pogresno korisničko ime ili lozinka!</strong>
             </div>
           </div>
-          <label for="korisnickoImeUsera">Korisiničko ime</label>
+          <label for="userUsername">Korisiničko ime</label>
           <input
             type="text"
             class="form-control"
-            id="korisnickoImeUsera"
+            id="userUsername"
             placeholder="Unesite korisničko ime"
           />
-          <small id="korisnickoImeText" class="form-text text-muted"
+          <small class="form-text text-muted"
             >Korisničko ime je jedinstveno</small
           >
         </div>
@@ -50,53 +50,58 @@
     <div id="registrationForm" class="invisible">
       <form id="formRegistration">
         <div class="form-group">
-          <label for="Ime">Ime *</label>
+          <label for="name">Ime *</label>
           <input
             type="text"
             class="form-control"
-            id="ime"
+            id="name"
+            name="Ime"
             placeholder="Unesite ime"
-            onkeyup="clearErrorMsg('ime')"
+            onkeyup="clearErrorMsg('name')"
             required
           />
-          <small id="err-ime" class="form-text invisible err-msg"
-            >Ime je obavezno polje!</small
-          >
+          <small id="err-name" class="form-text invisible err-msg"></small>
         </div>
         <div class="form-group">
-          <label for="prezime">Prezime *</label>
+          <label for="surname">Prezime *</label>
           <input
             type="text"
             class="form-control"
-            id="prezime"
+            id="surname"
+            name="Prezime"
             placeholder="Unesite prezime"
-            onkeyup="clearErrorMsg('prezime')"
+            onkeyup="clearErrorMsg('surname')"
             required
           />
-          <small id="err-prezime" class="form-text invisible err-msg"
-            >Prezime je obavezno polje!</small
-          >
+          <small id="err-surname" class="form-text invisible err-msg"></small>
         </div>
         <div class="form-group">
-          <label for="korisnickoIme">Korisiničko ime *</label>
+          <label for="username">Korisiničko ime *</label>
           <input
             type="text"
             class="form-control"
-            id="korisnickoIme"
+            id="username"
+            name="Korisničko ime"
             placeholder="Unesite korisničko ime"
-            onkeyup="clearErrorMsg('korisnickoIme')"
+            onkeyup="clearErrorMsg('username')"
             required
           />
-          <small id="err-korisnickoIme" class="form-text invisible err-msg"
-            >Korisničko ime je obavezno polje!</small
-          >
+          <small
+            id="err-username"
+            class="form-text invisible err-msg"
+          ></small>
+          <small
+            id="err-username-exist"
+            class="form-text invisible err-msg"
+          ></small>
         </div>
         <div class="form-group">
-          <label for="imeFirme">Ime firme</label>
+          <label for="companyName">Ime firme</label>
           <input
             type="text"
             class="form-control"
-            id="imeFirme"
+            id="companyName"
+            name="Ime firme"
             placeholder="Unesite ime firme"
           />
         </div>
@@ -105,14 +110,17 @@
           <input
             type="email"
             class="form-control"
-            id="email"
+            id="my-email"
+            name="Email"
             placeholder="Unesite email"
-            onkeyup="clearErrorMsg('email')"
+            onkeyup="clearErrorMsg('my-email')"
             required
           />
-          <small id="err-email" class="form-text invisible err-msg"
-            >Email je obavezno polje!</small>
-            <small id="validate-email" class="form-text invisible err-msg"></small>
+          <small id="err-my-email" class="form-text invisible err-msg"></small>
+          <small
+            id="validate-email"
+            class="form-text invisible err-msg"
+          ></small>
         </div>
         <div class="form-group">
           <label for="password">Lozinka *</label>
@@ -120,15 +128,16 @@
             type="password"
             class="form-control"
             id="password"
+            name="Lozinka"
             placeholder="Unesite lozinku"
             onkeyup="clearErrorMsg('password')"
             required
           />
-          <small id="err-password" class="form-text invisible err-msg"
-            >Lozinka je obavezno polje!</small
-          >
-          <small id="validate-password" class="form-text invisible err-msg"
-            ></small>
+          <small id="err-password" class="form-text invisible err-msg"></small>
+          <small
+            id="validate-password"
+            class="form-text invisible err-msg"
+          ></small>
         </div>
         <div class="form-group">
           <label for="password1">Potvrda lozinke</label>
@@ -136,15 +145,14 @@
             type="password"
             class="form-control"
             id="password1"
+            name="Potvrda lozinke"
             placeholder="Ponovite lozinku"
             onkeyup="clearErrorMsg('password1')"
             required
           />
-          <small id="err-password1" class="form-text invisible err-msg"
-            >Potvrda lozinke je obavezno polje!</small
-          >
+          <small id="err-password1" class="form-text invisible err-msg"></small>
           <small id="err-passDif" class="form-text invisible err-msg"
-            >Lozinke nisu iste!</small
+            >Lozinke nisu iste ili lozinka ima manje od 8 karaktera!</small
           >
         </div>
         <button
