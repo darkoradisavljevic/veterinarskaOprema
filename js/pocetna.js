@@ -40,11 +40,10 @@ partners.map(partner => {
         <img src=${partner.img} alt=${partner.name}/>
       </a>
     `;
-  document.getElementById("all-partners").appendChild(partnersDiv);
+  elementById("all-partners").appendChild(partnersDiv);
 });
 
-let cardProducts = JSON.parse(localStorage.getItem("products"));
-cardProducts.slice(0, 7).map(proizvod => {
+proizvodi.slice(0, 7).map(proizvod => {
   let cardDiv = document.createElement("div");
   cardDiv.setAttribute("class", "owl-cont");
   cardDiv.innerHTML = `
@@ -62,5 +61,5 @@ cardProducts.slice(0, 7).map(proizvod => {
     </div>
   `;
 
-  document.getElementById("all-cards").appendChild(cardDiv);
+  elementById("all-cards").appendChild(cardDiv);
 });
