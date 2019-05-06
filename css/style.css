@@ -30,11 +30,6 @@ a:hover {
 i {
   padding-right: 10px;
 }
-.row {
-  width: 100%;
-  margin-left: 15px !important;
-  margin-right: 15px !important;
-}
 
 nav .container-fluid .navbar-header a {
   text-transform: uppercase;
@@ -105,11 +100,8 @@ nav .container-fluid .navbar-header a {
   justify-content: center;
 }
 .container {
-  margin-top: 50px;
+  margin: 50px;
   height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
 }
 .fill {
   min-height: 100%;
@@ -182,7 +174,6 @@ small {
 }
 .owl-carousel {
   height: 300px;
-  padding-top: 60px;
 }
 
 .owl-theme .owl-controls .owl-page span {
@@ -301,5 +292,11 @@ iframe {
   }
   .index-right-side {
     margin-top: 50px;
+  }
+  #site-logo{
+    font-size: 16px;
+  }
+  .headerImg{
+    width: 40px;
   }
 }

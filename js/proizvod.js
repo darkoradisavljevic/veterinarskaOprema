@@ -14,18 +14,17 @@ elementById("product-description").appendChild(descriptionDiv);
 if (JSON.parse(localStorage.getItem("isLogin")) === true) {
   setVisible("logged");
   setInvisible("non-logged");
+  // default-ne vrednosti za email i ime, uzeto iz objekta ulogovanog user-a u localStorage-u
+  elementById("user-name").setAttribute(
+    "value",
+    `${loggedUser[0].name} ${loggedUser[0].surname}`
+  );
+  elementById("user-email").setAttribute("value", loggedUser[0].email);
 } else {
   setVisible("non-logged");
   setInvisible("logged");
+  setInvisible("btn-message-sent");
 }
-
-// default-ne vrednosti za email i ime, uzeto iz objekta ulogovanog user-a u localStorage-u
-document
-  .getElementById("user-name")
-  .setAttribute("value", `${loggedUser[0].name} ${loggedUser[0].surname}`);
-document
-  .getElementById("user-email")
-  .setAttribute("value", loggedUser[0].email);
 
 elementById("product-name").innerHTML = prod.find(
   p => p.id === parseInt(id[1])
