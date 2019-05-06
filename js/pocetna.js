@@ -1,3 +1,4 @@
+// Slajder za prikaz proizvoda na početnoj strani
 $(document).ready(function() {
   const owl = $(".owl-carousel");
   owl.owlCarousel({
@@ -31,18 +32,7 @@ $(document).ready(function() {
   });
 });
 
-let partners = JSON.parse(localStorage.getItem("partners"));
-partners.map(partner => {
-  let partnersDiv = document.createElement("div");
-  partnersDiv.setAttribute("class", "col-xs-6 col-sm-6 col-md-2 col-lg-2");
-  partnersDiv.innerHTML = `
-      <a href=${partner.url} target="_blank">
-        <img src=${partner.img} alt=${partner.name}/>
-      </a>
-    `;
-  elementById("all-partners").appendChild(partnersDiv);
-});
-
+// Random proizvodi koji će se prikazivati u slajderu
 let randomProizvodi = proizvodi.sort(() => Math.random() - 0.5);
 randomProizvodi.map(proizvod => {
   let cardDiv = document.createElement("div");
@@ -65,4 +55,17 @@ randomProizvodi.map(proizvod => {
   `;
 
   elementById("all-cards").appendChild(cardDiv);
+});
+
+// Prikaz partnera
+let partners = JSON.parse(localStorage.getItem("partners"));
+partners.map(partner => {
+  let partnersDiv = document.createElement("div");
+  partnersDiv.setAttribute("class", "col-xs-6 col-sm-6 col-md-2 col-lg-2");
+  partnersDiv.innerHTML = `
+      <a href=${partner.url} target="_blank">
+        <img src=${partner.img} alt=${partner.name}/>
+      </a>
+    `;
+  elementById("all-partners").appendChild(partnersDiv);
 });

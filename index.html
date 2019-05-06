@@ -20,13 +20,18 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"
+    ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <script>
+      // Dinamičko učitavanje header-a, footer-a i glavnog sadržaja strane
       $(() => {
         $("#footer").load("/html/footer.html");
         $("#header").load("/html/header.html");
-        $(".container").load(`/html${window.location.pathname}`);
+        $(".container").load("/html/index.html");
       });
     </script>
   </head>

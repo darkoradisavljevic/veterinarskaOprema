@@ -73,6 +73,9 @@ nav .container-fluid .navbar-header a {
 #non-logged {
   padding: 0 30px;
 }
+.requiredField {
+  margin-bottom: 15px;
+}
 #loginForm,
 #registrationForm,
 #all-products {

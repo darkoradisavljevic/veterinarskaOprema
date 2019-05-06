@@ -1,5 +1,7 @@
+// login forma po defaultu treba da bude vidljiva
 setVisible("loginForm");
 
+// funkcija koja zamenjuje login formu registracionom formom.
 function switchForms(event, eventToShow, eventToHide) {
   event.preventDefault();
   setVisible(eventToShow);
@@ -7,6 +9,7 @@ function switchForms(event, eventToShow, eventToHide) {
 }
 elementById("registration").addEventListener("click", registration);
 
+// Registracija korisnika
 function registration(event) {
   event.preventDefault();
 
@@ -20,6 +23,7 @@ function registration(event) {
   save(name, surname, username, companyName, email, password);
 }
 
+// Validacija forme za registraciju
 function validation(form) {
   const password = elementById("password").value;
   const password1 = elementById("password1").value;
@@ -49,7 +53,7 @@ function validation(form) {
     return false;
   }
   //ako su lozinke razlicite ili imaju manje od 8 karaktera uslov nije ispunjen
-  if (password !== password1 || password.length < 7) {
+  if (password !== password1 || password.length < 8) {
     setVisible("err-passDif");
     return false;
   } else {
@@ -58,6 +62,7 @@ function validation(form) {
   }
 }
 
+// Validacija email-a
 function validateEmail(email) {
   let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!re.test(String(email).toLowerCase())) {
@@ -69,6 +74,7 @@ function validateEmail(email) {
   }
 }
 
+// Poruke da polja nisu popunjena se uklanjaju na okidanje onkeyup event-a
 function clearErrorMsg(id) {
   setInvisible("err-" + id);
   setInvisible("err-passDif");
@@ -76,6 +82,7 @@ function clearErrorMsg(id) {
   setInvisible("err-username-exist");
 }
 
+// Čuvanje korisnika posle registracije u local storage
 function save(name, surname, username, companyName, email, password) {
   if (!validation("formRegistration")) {
     return false;
@@ -100,6 +107,7 @@ function save(name, surname, username, companyName, email, password) {
 }
 elementById("login").addEventListener("click", login);
 
+// Logovanje korisnika
 function login(event) {
   event.preventDefault();
 
@@ -111,6 +119,7 @@ function login(event) {
     user => user[0].username === userUsername
   );
 
+  // Ako je korisnik registrovan i ako se username i password poklapaju sa unetim uloguj korisnika
   if (
     registeredUsername &&
     (userUsername === registeredUsername[0].username &&
