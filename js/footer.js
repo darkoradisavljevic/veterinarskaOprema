@@ -4,6 +4,7 @@ window.onscroll = function() {
   scrollFunction();
 };
 
+// Scroll na početak strane
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("topBtn").style.display = "block";
