@@ -7,7 +7,7 @@ Obuhvata registraciju i logovanje korisnika,
 informacije o proizvodima,
 kontakt informacije,
 kao i kratko upoznavanje sa firmom.
-Korisnik ima mogućnost da firmi pošalje upit za proivod koji ga interesuje.
+Korisnik ima mogućnost da firmi pošalje upit za proizvod koji ga interesuje.
 
 ### Biblioteke koje se koriste
 
