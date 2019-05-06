@@ -2,8 +2,13 @@
   class="navbar navbar-fixed-top navbar-inverse navbar-static-top"
   role="navigation"
 >
-  <div class="navbar-header navbar-left center" >
-    <img class="headerImg" src="/assets/shortLogo.png" alt="header image" width="50px" />
+  <div class="navbar-header navbar-left center">
+    <img
+      class="headerImg"
+      src="/assets/shortLogo.png"
+      alt="header image"
+      width="50px"
+    />
     <a class="navbar-brand" href="#" id="site-logo">
       Veterinarska oprema
     </a>
@@ -18,7 +23,7 @@
       >
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
     </div>
@@ -54,26 +59,32 @@
     </ul>
   </div>
 </nav>
- <!-- Modal -->
- <div class="modal fade" id="my-profile" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" id="fullname"></h4>
-        </div>
-        <div class="modal-body">
-          <p><strong>Korisničko ime: </strong>><span id="profile-username"></span></p>
-          <p><strong>Email: </strong><span id="profile-email"></span></p>
-          <p id="company-visible" class="invisible"><strong>Ime firme: </strong><span id="profile-company"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="my-profile" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title" id="fullname"></h4>
       </div>
-      
+      <div class="modal-body">
+        <p>
+          <strong>Korisničko ime: </strong><span id="profile-username"></span>
+        </p>
+        <p><strong>Email: </strong><span id="profile-email"></span></p>
+        <p id="company-visible" class="invisible">
+          <strong>Ime firme: </strong><span id="profile-company"></span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Zatvori
+        </button>
+      </div>
     </div>
   </div>
+</div>
 <script src="js/header.js"></script>
