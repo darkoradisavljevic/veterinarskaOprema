@@ -42,10 +42,14 @@ $ npm start
 
 Glavni fajl za pokretanje projekta je index.html.
 
-U rootu projekta se takođe nalaze fajlovi za sadržaj svake od stranica u koje je učitan header, footer i glavni sadržaj. 
+U rootu projekta se takođe nalaze fajlovi za sadržaj svake od stranica u koje je učitan header, footer i glavni sadržaj.
 
 Content header-a footer-a i glavnog sadržaja se nalazi u folderu html.
 
-Svaka strana ima svoj .js fajl koji se nalazi u js folderu. 
+Svaka strana ima svoj .js fajl koji se nalazi u js folderu.
 
-CSS kod se nalazi u folderu css fajl je style.css. 
+CSS kod se nalazi u folderu css fajl je style.css.
+
+U jsons folderu nalaze se .json fajlovi.
+
+U folderu assets nalaze se sve slike koje se koriste na sajtu.
