@@ -38,7 +38,7 @@ Projekat se pokreće komandom
 $ npm start
 ```
 
-###Struktura projekta
+### Struktura projekta
 
 Glavni fajl za pokretanje projekta je index.html.
 
